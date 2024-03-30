@@ -1,0 +1,50 @@
+//
+// AUTOEXEC.EIC	Default startup script.
+//
+// When the debugger starts up it will look for a file "autoexec.eic"
+// in the same directory as the debugger executable (eg. PS2DBG.EXE or NGCDBG.EXE)
+// If it finds this file it will automatically execute it. This is your chance to
+// set any EiC interpreter settings and include any files you wish pre-included
+//
+
+// *** IF YOU WANT TO INSTALL/USE SCRIPTING YOU MUST COPY THIS FILE
+// *** TO THE DIRECTORY WHERE YOUR DEBUGGER EXECUTABLE LIVES AND 
+// *** THEN YOU MUST MODIFY IT TO SET THE CORRECT PATH
+//
+// In this default we just set the default path for include files
+// but you can also add script code to initialise anything
+// else you need and setup handy debugging functions etc.
+//
+// Note that the space after the ":-I" command is always necessary.
+// Also, if you have spaces in filenames you must use quotes.
+// and for now please try to avoid \ followed by a quote.
+//
+//  eg. :-I "C:\Program Files\ProDG for PlayStation2\include"
+
+:-I "C:\Program Files\ProDG for PlayStation2\include"
+
+// :-L // uncomment this line to print the current include path
+
+//
+// Everything from here on is optional and is just here for example.
+//
+
+#include <stdio.h>
+
+//
+// The optional main() function of this script just prints a message but you 
+// can extend it too for other custom setup and note that you can execute 
+// other scripts at startup by specifying them on the command line with the 
+// -S switch. Such command-line specified scripts will always execute 
+// immediately after this one in the order that you specify them on the 
+// command line.
+//
+
+int main(int argc, char** argv)
+{
+	// This would be a good place to set you custom type handler templates
+	// so that your watch pane displays your types in your custom formats
+
+	printf("main() in autoexec.eic has completed\n");
+	return 0;	// to avoid a warning
+}
